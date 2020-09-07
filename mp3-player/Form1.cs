@@ -299,5 +299,10 @@ namespace mp3_player
             player.fileToPlay = labelPath.Text; //Changes file to play of player to currently selected song
         }
 
+        private void savePlaylistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+        }
     }
 }

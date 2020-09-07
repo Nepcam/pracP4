@@ -96,27 +96,28 @@
             // newPlaylistToolStripMenuItem
             // 
             this.newPlaylistToolStripMenuItem.Name = "newPlaylistToolStripMenuItem";
-            this.newPlaylistToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.newPlaylistToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newPlaylistToolStripMenuItem.Text = "New Playlist";
             this.newPlaylistToolStripMenuItem.Click += new System.EventHandler(this.newPlaylistToolStripMenuItem_Click);
             // 
             // openPlaylistToolStripMenuItem
             // 
             this.openPlaylistToolStripMenuItem.Name = "openPlaylistToolStripMenuItem";
-            this.openPlaylistToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.openPlaylistToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openPlaylistToolStripMenuItem.Text = "Open Playlist";
             this.openPlaylistToolStripMenuItem.Click += new System.EventHandler(this.openPlaylistToolStripMenuItem_Click);
             // 
             // savePlaylistToolStripMenuItem
             // 
             this.savePlaylistToolStripMenuItem.Name = "savePlaylistToolStripMenuItem";
-            this.savePlaylistToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.savePlaylistToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.savePlaylistToolStripMenuItem.Text = "Save Playlist";
+            this.savePlaylistToolStripMenuItem.Click += new System.EventHandler(this.savePlaylistToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
