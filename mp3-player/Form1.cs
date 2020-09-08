@@ -302,7 +302,17 @@ namespace mp3_player
         private void savePlaylistToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            string filter = "CSV file (*.csv)|*.csv| All Files (*.*)|*.*";
+            saveFileDialog1.Filter = filter;
+            StreamWriter writer = null;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                filter = saveFileDialog1.FileName;
+                writer = new StreamWriter(filter);
+
+                writer.Close();
+            }
         }
     }
 }
