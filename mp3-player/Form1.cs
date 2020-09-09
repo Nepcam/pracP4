@@ -304,14 +304,17 @@ namespace mp3_player
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             string filter = "CSV file (*.csv)|*.csv| All Files (*.*)|*.*";
             saveFileDialog1.Filter = filter;
-            StreamWriter writer = null;
+            //StreamWriter sw = new StreamWriter(filter);
+            Song song = new Song();
+            Playlist playlist = new Playlist();
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                filter = saveFileDialog1.FileName;
-                writer = new StreamWriter(filter);
-
-                writer.Close();
+               
+                playlist.AddSong(song);
+                string csv = playlist.ToString().PadRight(10);
+                //sw.WriteLine(csv);
+                //sw.Close();
             }
         }
     }
