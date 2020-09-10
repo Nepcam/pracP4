@@ -301,21 +301,51 @@ namespace mp3_player
 
         private void savePlaylistToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            string filter = "CSV file (*.csv)|*.csv| All Files (*.*)|*.*";
-            saveFileDialog1.Filter = filter;
-            //StreamWriter sw = new StreamWriter(filter);
-            Song song = new Song();
-            Playlist playlist = new Playlist();
+            //Stream myStream;
+            //SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            ////string filename = "output.csv";
+            //string line = "";
+            ////StreamWriter sw = new StreamWriter(line);
+
+            //if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            //{
+            //    //filename = new FileInfo(saveFileDialog1.FileName).Name;
+            //    if ((myStream = saveFileDialog1.OpenFile()) != null)
+            //    {
+            //        //using (TextWriter tw = new StreamWriter(filename))
+            //        //{
+            //        StreamWriter sw = new StreamWriter(myStream);
+            //        foreach (Song song in playlist.SongList)
+            //        {
+            //            // Code to write the stream goes here.
+            //            //tw.WriteLine(playlist.SongList);
+            //            line = song.id.ToString() + "," + song.path + "," + song.rating.ToString() + "," + song.tags.ToString();
+
+            //            sw.WriteLine(line);
+            //        }
+            //        //}
+            //        myStream.Close();
+            //    }
+            //}
+            //MessageBox.Show("File \"" + filename + "\"");
+
+
+
+            string line = "";
+            using (StreamWriter sw = new StreamWriter("output.csv"))
             {
-               
-                playlist.AddSong(song);
-                string csv = playlist.ToString().PadRight(10);
-                //sw.WriteLine(csv);
-                //sw.Close();
+                foreach (Song song in playlist.SongList)
+                {
+                    // Code to write the stream goes here.
+                    line = song.id.ToString() + "," + song.path + "," + song.rating.ToString() + "," + song.tags.ToString();
+
+                    sw.WriteLine(line);
+                }
+                sw.Close();
             }
+            
+
         }
     }
 }
