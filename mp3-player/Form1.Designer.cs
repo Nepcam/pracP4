@@ -66,6 +66,8 @@
             this.timerHalfSecs = new System.Windows.Forms.Timer(this.components);
             this.labelTags = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.buttonRating = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPosition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarVolume)).BeginInit();
@@ -383,11 +385,32 @@
             this.label12.TabIndex = 41;
             this.label12.Text = "Tags:";
             // 
+            // buttonRating
+            // 
+            this.buttonRating.Location = new System.Drawing.Point(547, 67);
+            this.buttonRating.Name = "buttonRating";
+            this.buttonRating.Size = new System.Drawing.Size(179, 23);
+            this.buttonRating.TabIndex = 42;
+            this.buttonRating.Text = "&Add a Rating";
+            this.buttonRating.UseVisualStyleBackColor = true;
+            this.buttonRating.Click += new System.EventHandler(this.buttonRating_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(465, 36);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(124, 13);
+            this.label11.TabIndex = 43;
+            this.label11.Text = "Rate song between 1 - 5";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(741, 323);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.buttonRating);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.labelTags);
             this.Controls.Add(this.trackBarPosition);
@@ -465,6 +488,8 @@
         private System.Windows.Forms.Timer timerHalfSecs;
         private System.Windows.Forms.Label labelTags;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button buttonRating;
+        private System.Windows.Forms.Label label11;
     }
 }
 

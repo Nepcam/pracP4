@@ -313,5 +313,24 @@ namespace mp3_player
             }
             sw.Close();
         }
+
+        private void buttonRating_Click(object sender, EventArgs e)
+        {
+            // let user input a rating value
+            int _rating = int.Parse(txtRating.Text);
+            string line = "";
+            if(_rating >= 1 && _rating <= 5)
+            {
+                StreamWriter sw = new StreamWriter("newPlaylist.csv");
+                // make a new playlist 
+                foreach (Song song in playlist.SongList)
+                {
+                    song.rating = _rating;
+                    line = song.id.ToString() + "," + song.path + "," + song.rating.ToString() + "," + song.tags.ToString();
+                    sw.WriteLine(line);
+                }
+                sw.Close();
+            }
+        }
     }
 }
