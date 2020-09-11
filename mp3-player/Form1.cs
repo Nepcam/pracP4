@@ -301,51 +301,17 @@ namespace mp3_player
 
         private void savePlaylistToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Stream myStream;
-            //SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-
-            ////string filename = "output.csv";
-            //string line = "";
-            ////StreamWriter sw = new StreamWriter(line);
-
-            //if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            //{
-            //    //filename = new FileInfo(saveFileDialog1.FileName).Name;
-            //    if ((myStream = saveFileDialog1.OpenFile()) != null)
-            //    {
-            //        //using (TextWriter tw = new StreamWriter(filename))
-            //        //{
-            //        StreamWriter sw = new StreamWriter(myStream);
-            //        foreach (Song song in playlist.SongList)
-            //        {
-            //            // Code to write the stream goes here.
-            //            //tw.WriteLine(playlist.SongList);
-            //            line = song.id.ToString() + "," + song.path + "," + song.rating.ToString() + "," + song.tags.ToString();
-
-            //            sw.WriteLine(line);
-            //        }
-            //        //}
-            //        myStream.Close();
-            //    }
-            //}
-            //MessageBox.Show("File \"" + filename + "\"");
-
-
-
             string line = "";
-            using (StreamWriter sw = new StreamWriter("output.csv"))
+
+            StreamWriter sw = new StreamWriter("test.csv");
+
+            foreach (Song song in playlist.SongList)
             {
-                foreach (Song song in playlist.SongList)
-                {
-                    // Code to write the stream goes here.
-                    line = song.id.ToString() + "," + song.path + "," + song.rating.ToString() + "," + song.tags.ToString();
+                line = song.id.ToString() + "," + song.path + "," + song.rating.ToString() + "," + song.tags.ToString();
 
-                    sw.WriteLine(line);
-                }
-                sw.Close();
+                sw.WriteLine(line);
             }
-            
-
+            sw.Close();
         }
     }
 }
