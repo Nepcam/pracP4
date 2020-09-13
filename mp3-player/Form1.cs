@@ -316,7 +316,7 @@ namespace mp3_player
 
         private void buttonRating_Click(object sender, EventArgs e)
         {
-            int _rating = int.Parse(txtRating.Text);
+            //int _rating = int.Parse(txtRating.Text);
             string line = "";
 
             StreamWriter sw = new StreamWriter("test.csv");
