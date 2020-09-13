@@ -301,9 +301,9 @@ namespace mp3_player
 
         private void savePlaylistToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string line = "";
-
             StreamWriter sw = new StreamWriter("test.csv");
+
+            string line = "";
 
             foreach (Song song in playlist.SongList)
             {
@@ -312,22 +312,12 @@ namespace mp3_player
                 sw.WriteLine(line);
             }
             sw.Close();
+            MessageBox.Show("File \"" + line + "\"");
         }
 
         private void buttonRating_Click(object sender, EventArgs e)
         {
-            //int _rating = int.Parse(txtRating.Text);
-            string line = "";
-
-            StreamWriter sw = new StreamWriter("test.csv");
-
-            foreach (Song song in playlist.SongList)
-            {
-                line = song.id.ToString() + "," + song.path + "," + song.rating.ToString() + "," + song.tags.ToString();
-
-                sw.WriteLine(line);
-            }
-            sw.Close();
+           
         }
     }
 }
